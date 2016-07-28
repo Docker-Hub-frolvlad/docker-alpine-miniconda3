@@ -17,6 +17,8 @@ RUN CONDA_VERSION="4.0.5" && \
     \
     conda update --all --yes && \
     conda clean --all --yes && \
+    echo "Removing older versions of Python due to the bug #3177 in 'conda clean'" && \
+    rm -rf $(find /opt/conda/pkgs/ -maxdepth 1 -name python-3\* | sort | head -n -1) && \
     \
     apk del --purge .build-dependencies
 
