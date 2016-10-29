@@ -17,6 +17,7 @@ RUN CONDA_VERSION="4.0.5" && \
     rm miniconda.sh && \
     \
     conda update --all --yes && \
+    conda config --set auto_update_conda False && \
     conda clean --all --yes && \
     echo "Removing older versions of Python due to the bug #3177 in 'conda clean'" && \
     rm -rf $(find "$CONDA_DIR/pkgs/" -maxdepth 1 -name "python-3*" | sort | head -n -1) && \
