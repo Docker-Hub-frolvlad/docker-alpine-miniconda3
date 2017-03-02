@@ -22,4 +22,7 @@ RUN CONDA_VERSION="4.0.5" && \
     echo "Removing older versions of Python due to the bug #3177 in 'conda clean'" && \
     rm -rf $(find "$CONDA_DIR/pkgs/" -maxdepth 1 -name "python-3*" | sort | head -n -1) && \
     \
-    apk del --purge .build-dependencies
+    apk del --purge .build-dependencies && \
+    \
+    mkdir -p "$CONDA_DIR/locks" && \
+    chmod 777 "$CONDA_DIR/locks"
