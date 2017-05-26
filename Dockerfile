@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc
+FROM frolvlad/alpine-glibc:alpine-3.6
 
 ENV CONDA_DIR="/opt/conda"
 ENV PATH="$CONDA_DIR/bin:$PATH"
@@ -18,9 +18,7 @@ RUN CONDA_VERSION="4.0.5" && \
     \
     conda update --all --yes && \
     conda config --set auto_update_conda False && \
-    conda clean --all --yes && \
-    echo "Removing older versions of Python due to the bug #3177 in 'conda clean'" && \
-    rm -rf $(find "$CONDA_DIR/pkgs/" -maxdepth 1 -name "python-3*" | sort | head -n -1) && \
+    rm -r "$CONDA_DIR/pkgs/" && \
     \
     apk del --purge .build-dependencies && \
     \
