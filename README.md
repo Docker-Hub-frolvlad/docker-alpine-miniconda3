@@ -2,11 +2,11 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/frolvlad/alpine-miniconda3.svg?style=flat-square)](https://hub.docker.com/r/frolvlad/alpine-miniconda3/)
 
 
-Miniconda Python 3.5 Docker image
+Miniconda Python 3.7 Docker image
 =================================
 
 This image is based on Alpine Linux image, which is only a 5MB image, and contains
-[Python 3.5](https://www.python.org/) packaged by Continuum with Conda package manager.
+[Python 3.7](https://www.python.org/) packaged by Continuum with Conda package manager.
 
 Download size of this image is only:
 
