@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc:alpine-3.18
+FROM frolvlad/alpine-glibc:alpine-3.19
 
 ARG CONDA_VERSION="py311_23.5.2-0"
 ARG CONDA_SHA256="634d76df5e489c44ade4085552b97bebc786d49245ed1a830022b0b406de5817"
