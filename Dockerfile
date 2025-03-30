@@ -1,7 +1,7 @@
-FROM frolvlad/alpine-glibc:alpine-3.19
+FROM frolvlad/alpine-glibc:alpine-3.21
 
-ARG CONDA_VERSION="py311_23.5.2-0"
-ARG CONDA_SHA256="634d76df5e489c44ade4085552b97bebc786d49245ed1a830022b0b406de5817"
+ARG CONDA_VERSION="py312_25.1.1-2"
+ARG CONDA_SHA256="4766d85b5f7d235ce250e998ebb5a8a8210cbd4f2b0fea4d2177b3ed9ea87884"
 ARG CONDA_DIR="/opt/conda"
 
 ENV PATH="$CONDA_DIR/bin:$PATH"
@@ -32,4 +32,6 @@ RUN echo "**** install dev packages ****" && \
     \
     echo "**** finalize ****" && \
     mkdir -p "$CONDA_DIR/locks" && \
-    chmod 777 "$CONDA_DIR/locks"
+    chmod 777 "$CONDA_DIR/locks" && \
+    \
+    python -c 'print("Hello World")'
